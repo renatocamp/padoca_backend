@@ -1,6 +1,8 @@
 package padoca.backend.services.impl;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,17 @@ public class UsuarioServiceImpl implements UsuarioService{
 	@Override
 	public void salvarUsuario(Usuario user) {
 		repository.save(user);
+	}
+
+	@Override
+	public Optional<Usuario> findByID(UUID idUsuario) {
+		return repository.findById(idUsuario);
+	}
+
+	@Override
+	public void deleteUsuario(UUID idUsuario) {
+		repository.deleteById(idUsuario);
+		
 	}
 
 }

@@ -24,24 +24,22 @@ public class Usuario implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID idUsuario;
 	
-	@Column(nullable = false, unique = true, length = 50)
+
 	private String nomeUsuario;
 	
-	@Column(nullable = false, unique = true, length = 50)
+
 	private String email;
 	
-	@Column(nullable = false, length = 255)
-    @JsonIgnore
+
 	private String senha;
 	
-	@Column(nullable = false, length = 150)
+
 	private String nomeCompleto;
 	
-	@Column(nullable = false)
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
 	private LocalDateTime dataCadastro;
 	
-	@Column(nullable = false)
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
 	private LocalDateTime lastUpdateData;
 
